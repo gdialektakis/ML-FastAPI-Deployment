@@ -47,6 +47,9 @@ def compute_model_metrics(y, preds):
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
+    print('Fbeta:{}'.format(fbeta))
+    print('precision:{}'.format(precision))
+    print('recall:{}'.format(recall))
     return precision, recall, fbeta
 
 

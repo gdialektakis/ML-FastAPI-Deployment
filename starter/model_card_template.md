@@ -21,9 +21,9 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 ## Metrics
 - We have used three metrics in this project; fbeta_score, precision_score and recall_score.
 - Our model's performance is:
-  - Fbeta_score:
-  - Precision_score:
-  - Recall_score:
+  - Fbeta_score: 0.99992
+  - Precision_score: 0.99984
+  - Recall_score: 1.0
 
 ## Ethical Considerations
 - None to be aware of.

@@ -47,9 +47,9 @@ def get_sliced_formance(model, data, col, encoder, lb):
     # Get the unique values of the feature of interest
     slices = data.loc[:, col].unique()
 
-    # Creating a txt file where we'll write our perfromance results
+    # Creating a txt file where we'll write our performance results
     file_object = open('{}_slice_output.txt'.format(col), 'w')
-    file_object.write('Here are the Performance results for the slices of {} feature'.format(col))
+    file_object.write('Here are the performance results for the slices of {} feature'.format(col))
     file_object.write("\n")
 
     # Iterating over each slice and calculating the performance metrics
