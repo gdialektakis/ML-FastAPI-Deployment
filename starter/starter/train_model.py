@@ -8,7 +8,6 @@ from ml.data import process_data
 from ml.model import train_model
 import sklearn
 
-print('The scikit-learn version is {}.'.format(sklearn.__version__))
 # Add code to load in the data.
 data = pd.read_csv("census.csv")
 
@@ -32,5 +31,6 @@ X_train, y_train, encoder, lb = process_data(
 model = train_model(X_train, y_train)
 
 # Saving the encoder and the LabelBinarizer for being used in the API later
-pickle.dump(encoder, open("starter/model/encoder.pkl", 'wb'))
-pickle.dump(lb, open("starter/model/label_binarizer.pkl", 'wb'))
+pickle.dump(encoder, open("model/encoder.pkl", 'wb'))
+pickle.dump(lb, open("model/label_binarizer.pkl", 'wb'))
+
