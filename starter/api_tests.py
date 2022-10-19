@@ -19,7 +19,7 @@ def test_get():
     assert response.status_code == 200
 
 
-# A function to test the post on a predicted value of Salary >50K
+# A function to test the post on a predicted value of Salary <50K
 def test_post_1():
     input_dict = {
         "age": 25,
@@ -37,7 +37,7 @@ def test_post_1():
         "hours_per_week": 35,
         "native_country": "United-States"
     }
-    response = client.post("/predict", json=input_dict)
+    response = client.post("/prediction", json=input_dict)
     assert response.status_code == 200
     assert json.loads(response.text)["forecast"] == "Income < 50k"
 
@@ -60,6 +60,6 @@ def test_post_2():
         "hours_per_week": 40,
         "native_country": "United-States"
     }
-    response = client.post("/predict", json=input_dict)
+    response = client.post("/prediction", json=input_dict)
     assert response.status_code == 200
     assert json.loads(response.text)["forecast"] == "Income > 50k"

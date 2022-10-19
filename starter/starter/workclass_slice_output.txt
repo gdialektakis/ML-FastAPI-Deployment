@@ -1,0 +1,46 @@
+Here are the performance results for the slices of workclass feature
+State-gov
+Precision: 0.9620991253644315 
+Recall: 0.9348441926345609 
+fbeta: 0.9482758620689655 
+*-**-**-**-**-*
+Self-emp-not-inc
+Precision: 0.9523809523809523 
+Recall: 0.9116022099447514 
+fbeta: 0.931545518701482 
+*-**-**-**-**-*
+Private
+Precision: 0.9484960857025134 
+Recall: 0.927664718920008 
+fbeta: 0.9379647550168074 
+*-**-**-**-**-*
+Federal-gov
+Precision: 0.9564032697547684 
+Recall: 0.9460916442048517 
+fbeta: 0.9512195121951219 
+*-**-**-**-**-*
+Local-gov
+Precision: 0.9657534246575342 
+Recall: 0.9141004862236629 
+fbeta: 0.9392173189009159 
+*-**-**-**-**-*
+?
+Precision: 0.949438202247191 
+Recall: 0.8848167539267016 
+fbeta: 0.9159891598915989 
+*-**-**-**-**-*
+Self-emp-inc
+Precision: 0.9491255961844197 
+Recall: 0.9598070739549839 
+fbeta: 0.9544364508393285 
+*-**-**-**-**-*
+Without-pay
+Precision: 1.0 
+Recall: 1.0 
+fbeta: 1.0 
+*-**-**-**-**-*
+Never-worked
+Precision: 1.0 
+Recall: 1.0 
+fbeta: 1.0 
+*-**-**-**-**-*

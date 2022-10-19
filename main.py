@@ -13,7 +13,7 @@ from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
 
 # Import the model to be used to predict
-model = pd.read_pickle(r"starter/starter/model/model.pkl")
+model = pd.read_pickle(r"starter/starter/model/model.sav")
 Encoder = pd.read_pickle(r"starter/starter/model/encoder.pkl")
 
 # Initialize a FastAPI instance
@@ -28,43 +28,43 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
 
 
 # pydantic models
-class DataIn(BaseModel):
+class DataInput(BaseModel):
     # The input should be alist of 108 values
-    age: int = 39
-    workclass: str = "State-gov"
-    fnlgt: int = 77516
-    education: str = "Bachelors"
-    education_num: int = 13
+    age: int = 42
+    workclass: str = "Local-gov"
+    fnlgt: int = 254817
+    education: str = "Some-college"
+    education_num: int = 10
     marital_status: str = "Never-married"
-    occupation: str = "Adm-clerical"
+    occupation: str = "Prof-specialty"
     relationship: str = "Not-in-family"
     race: str = "White"
-    sex: str = "Male"
-    capital_gain: int = 2174
-    capital_loss: int = 0
+    sex: str = "Female"
+    capital_gain: int = 0
+    capital_loss: int = 1340
     hours_per_week: int = 40
     native_country: str = "United-States"
 
 
-class DataOut(BaseModel):
-    # The forecast output will be either >50K or <50K
-    forecast: str = "Income > 50k"
+class Prediction(BaseModel):
+    # The prediction output will be either >50K or <50K
+    prediction: str = "Income <= 50k"
 
 
 # Adding a Welcome message to the initial page
 @app.get("/")
 async def root():
-    return {"Welcome": "to the Model!"}
+    return {"Welcome": "This is our first attempt towards deploying a ML Pipeline using FastAPI!"}
 
 
 # routes
 @app.get("/welcome")
 async def welcome():
-    return {"Welcome": "to the Model!"}
+    return {"Welcome": "This is our first attempt towards deploying a ML Pipeline using FastAPI!"}
 
 
-@app.post("/predict", response_model=DataOut, status_code=200)
-def get_prediction(payload: DataIn):
+@app.post("/predict", response_model=Prediction, status_code=200)
+def get_prediction(payload: DataInput):
     # Reading the input data
     age = payload.age
     workclass = payload.workclass
