@@ -11,7 +11,7 @@ from ml.data import process_data
 from ml.model import train_model, compute_model_metrics, inference
 
 # Add code to load in the data.
-data = pd.read_csv(os.path.join(os.getcwd(), "census.csv"))
+data = pd.read_csv(os.path.join(os.getcwd(), "starter/census.csv"))
 
 # Train test split
 train, test = train_test_split(data, test_size=0.20)
