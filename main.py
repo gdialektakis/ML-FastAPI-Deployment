@@ -13,8 +13,8 @@ from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
 
 # Import the model to be used to predict
-model = pd.read_pickle(r"starter/starter/model/model.sav")
-Encoder = pd.read_pickle(r"starter/starter/model/encoder.pkl")
+model = pd.read_pickle(r"starter/model/model.sav")
+Encoder = pd.read_pickle(r"starter/model/encoder.pkl")
 
 # Initialize a FastAPI instance
 app = FastAPI()

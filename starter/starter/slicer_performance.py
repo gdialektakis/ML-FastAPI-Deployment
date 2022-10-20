@@ -8,9 +8,9 @@ import pickle
 
 # Add code to load in the data, model and encoder
 data = pd.read_csv("census.csv")
-model = pickle.load(open("model/model.sav", 'rb'))
-encoder = pickle.load(open("model/encoder.pkl", 'rb'))
-lb = pickle.load(open("model/label_binarizer.pkl", 'rb'))
+model = pickle.load(open("../model/model.sav", 'rb'))
+encoder = pickle.load(open("../model/encoder.pkl", 'rb'))
+lb = pickle.load(open("../model/label_binarizer.pkl", 'rb'))
 
 
 def get_sliced_formance(model, data, col, encoder, lb):

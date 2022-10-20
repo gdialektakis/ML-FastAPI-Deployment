@@ -9,7 +9,7 @@ from ml.model import train_model
 import sklearn
 
 # Add code to load in the data.
-data = pd.read_csv("census.csv")
+data = pd.read_csv("starter/data/census.csv")
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.2)
@@ -31,6 +31,6 @@ X_train, y_train, encoder, lb = process_data(
 model = train_model(X_train, y_train)
 
 # Saving the encoder and the LabelBinarizer for being used in the API later
-pickle.dump(encoder, open("model/encoder.pkl", 'wb'))
-pickle.dump(lb, open("model/label_binarizer.pkl", 'wb'))
+pickle.dump(encoder, open("/starter/model/encoder.pkl", 'wb'))
+pickle.dump(lb, open("/starter/model/label_binarizer.pkl", 'wb'))
 

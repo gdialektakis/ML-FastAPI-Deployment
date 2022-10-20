@@ -23,7 +23,7 @@ def train_model(X_train, y_train):
     lr = RandomForestClassifier(random_state=23)
     lr.fit(X_train, y_train)
     # save the model to disk
-    filename = 'model/model.sav'
+    filename = 'starter/model/model.sav'
     pickle.dump(lr, open(filename, 'wb'))
     return lr
 
