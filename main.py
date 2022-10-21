@@ -63,8 +63,8 @@ async def welcome():
     return {"Welcome": "This is our first attempt towards deploying a ML Pipeline using FastAPI!"}
 
 
-@app.post("/predict", response_model=Prediction, status_code=200)
-def get_prediction(payload: DataInput):
+@app.post("/predict", response_model=Prediction)
+async def get_prediction(payload: DataInput):
     # Reading the input data
     age = payload.age
     workclass = payload.workclass
@@ -117,5 +117,5 @@ def get_prediction(payload: DataInput):
     elif prediction_outcome == 1:
         prediction_outcome = "Income > 50k"
     # Building the response dictionary
-    response_object = {"forecast": prediction_outcome}
+    response_object = {"prediction": prediction_outcome}
     return response_object

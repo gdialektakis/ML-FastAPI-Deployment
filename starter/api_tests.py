@@ -17,8 +17,7 @@ client = TestClient(app)
 def test_get():
     response = client.get("/welcome")
     assert response.status_code == 200
-    assert json.loads(response.text) == "Welcome This is our first attempt towards deploying a ML Pipeline using " \
-                                        "FastAPI! "
+    assert response.json() == {"Welcome": "This is our first attempt towards deploying a ML Pipeline using FastAPI!"}
 
 
 # A function to test the post on a predicted value of Salary <50K
@@ -39,9 +38,11 @@ def test_post_1():
         "hours_per_week": 35,
         "native_country": "United-States"
     }
-    response = client.post("/prediction", json=input_dict)
-    assert response.status_code == 200, response.json()
-    assert json.loads(response.text)["forecast"] == "Income < 50k"
+    response = client.post("/predict", json=input_dict)
+    assert response.status_code == 200
+    print(response.json())
+    assert response.json() == {'prediction': 'Income < 50k'}
+    #assert json.loads(response.text)["prediction"] == "Income < 50k"
 
 
 # A function to test the post on a predicted value of Salary>50K
@@ -62,9 +63,10 @@ def test_post_2():
         "hours_per_week": 40,
         "native_country": "United-States"
     }
-    response = client.post("/prediction", json=input_dict)
-    assert response.status_code == 200, response.json()
-    assert json.loads(response.text)["forecast"] == "Income > 50k"
+    response = client.post("/predict", json=input_dict)
+    assert response.status_code == 200
+    print(response.json())
+    assert response.json() == {'prediction': 'Income > 50k'}
 
 
 if __name__ == "__main__":
