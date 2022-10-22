@@ -19,13 +19,14 @@ Encoder = pd.read_pickle(r"starter/model/encoder.pkl")
 # Initialize a FastAPI instance
 app = FastAPI()
 
+""" 
 # Give Heroku the ability to pull in data from DVC upon app start up.
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
     if os.system("dvc pull") != 0:
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
-
+"""
 
 # pydantic models
 class DataInput(BaseModel):
