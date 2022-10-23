@@ -21,11 +21,14 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 ## Metrics
 - We have used three metrics in this project; fbeta_score, precision_score and recall_score.
 - Our model's performance is:
-  - Fbeta_score: 0.99992
-  - Precision_score: 0.99984
-  - Recall_score: 1.0
+  - Fbeta_score: 0.67327
+  - Precision_score: 0.72801
+  - Recall_score: 0.62619
 
 ## Ethical Considerations
-- None to be aware of.
+- One ethical consideration we need to think of is the high performance metrics when evaluating on slices of the data, 
+while the performance is much lower when evaluating on the whole test set.
+- In addition, validation on slices of the data shows that for those people that are without-pay of have never worked,
+the model achieves the highest performance on classifying wether those people have income below or higher than 50K.
 ## Caveats and Recommendations
 - The performance of the model can be improved using either more advanced classifiers or by implementing hyperparameter tuning.
