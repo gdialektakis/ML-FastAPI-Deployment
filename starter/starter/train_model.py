@@ -9,7 +9,7 @@ from ml.model import train_model, inference, compute_model_metrics
 import sklearn
 
 
-if __name__ == "__main__":
+def ml_pipeline():
     # Add code to load in the data.
     data = pd.read_csv("starter/data/census.csv")
 
@@ -33,8 +33,8 @@ if __name__ == "__main__":
     model = train_model(X_train, y_train)
 
     # Saving the encoder and the LabelBinarizer for being used in the API later
-    #pickle.dump(encoder, open("/starter/model/encoder.pkl", 'wb'))
-    #pickle.dump(lb, open("/starter/model/label_binarizer.pkl", 'wb'))
+    pickle.dump(encoder, open("/starter/model/encoder.pkl", 'wb'))
+    pickle.dump(lb, open("/starter/model/label_binarizer.pkl", 'wb'))
 
     # Validation
     X_test, y_test, encoder, lb = process_data(
@@ -45,3 +45,5 @@ if __name__ == "__main__":
 
 
 
+if __name__ == "__main__":
+    ml_pipeline()
